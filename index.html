@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid column</title>
+  <style>
+    body{
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+    }   
+
+    #content{
+      display: grid;
+      /* grid-template-columns: 33.3% 33.3% 33.3%; */
+      /* grid-template-columns: 1fr 2fr 1fr; */
+      grid-template-columns: repeat(9, 1fr);
+
+      /* 
+      here the number of values we are giving
+      row height is automatically determined by
+      the content in that element
+
+      we can over write it using the  property
+      grid-auto-row:200px;
+      the content inside it will cut it down
+
+      also the minmax can be used
+            grid-auto-rows: minmax(200px,auto);
+
+      */
+
+      /* 
+      we can specify the contents inside the
+      grid-template-rows similarlly for the column   
+      
+        
+      */
+      max-width: 960px;
+      margin: 0 auto;
+      grid-auto-rows: minmax(200px,auto);
+      grid-column-gap: 10px;
+      /* grid-gap also */
+    }
+
+    #content div{
+      background-color: #3bbced;
+      padding: 30px;
+    }
+
+    #content div:nth-child(even){
+      background-color: #777;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="content">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div> 
+  </div>
+</body>
+</html>
